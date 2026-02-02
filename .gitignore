@@ -78,3 +78,6 @@ htmlcov/
 .cache/
 .mypy_cache/
 .pyre/
+
+.env
+backend/.env
