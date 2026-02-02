@@ -1,22 +1,28 @@
 export default function Footer() {
   return (
-    <footer className="w-full bg-slate-900 text-slate-400 border-t border-slate-800">
+    <footer className="relative w-full backdrop-blur-lg bg-slate-900/80 text-slate-400 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-        
-        <p className="text-sm">
-          © {new Date().getFullYear()} AI Interview Prep. All rights reserved.
+
+        {/* Left */}
+        <p className="text-sm text-center md:text-left">
+          © {new Date().getFullYear()}{" "}
+          <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent font-semibold">
+            AI Interview Prep
+          </span>
+          . All rights reserved.
         </p>
 
-        <div className="flex gap-4 text-sm">
-          <span className="hover:text-indigo-400 cursor-pointer">
-            Privacy Policy
-          </span>
-          <span className="hover:text-indigo-400 cursor-pointer">
-            Terms
-          </span>
-          <span className="hover:text-indigo-400 cursor-pointer">
-            Contact
-          </span>
+        {/* Right links */}
+        <div className="flex gap-6 text-sm">
+          {["Privacy Policy", "Terms", "Contact"].map((item) => (
+            <span
+              key={item}
+              className="relative cursor-pointer hover:text-indigo-400 transition group"
+            >
+              {item}
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-indigo-400 transition-all group-hover:w-full" />
+            </span>
+          ))}
         </div>
 
       </div>

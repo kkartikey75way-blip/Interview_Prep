@@ -7,8 +7,10 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import Dashboard from "../pages/Dashboard";
-import Profile from "../pages/profile";
+import Profile from "../pages/Profile";
 import Interview from "../pages/Interview";
+import InterviewHistory from "../pages/InterviewHistory";
+
 
 const AppRouter = createBrowserRouter([
   {
@@ -33,6 +35,10 @@ const AppRouter = createBrowserRouter([
           {
             path: "/interview/:track",
             element: <Interview />,
+          },
+          {
+            path: "/interview/:track/history",
+            element: <InterviewHistory />,
           },
         ],
       },

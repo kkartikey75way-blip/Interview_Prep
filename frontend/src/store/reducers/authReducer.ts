@@ -5,9 +5,11 @@ interface AuthState {
   isAuthenticated: boolean;
 }
 
+const tokenFromStorage = localStorage.getItem("authToken");
+
 const initialState: AuthState = {
   token: null,
-  isAuthenticated: false, // 👈 ALWAYS false on reload
+  isAuthenticated: !!tokenFromStorage, // 👈 ALWAYS false on reload
 };
 
 const authSlice = createSlice({

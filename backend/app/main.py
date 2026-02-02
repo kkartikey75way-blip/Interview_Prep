@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routes import auth, interview, user
+from app.routes import auth, interview, user, interview_history
 from app.core.database import init_db
 
 app = FastAPI(title="AI Interview Prep API")
@@ -17,6 +17,7 @@ app.add_middleware(
 app.include_router(auth.router)
 app.include_router(interview.router)
 app.include_router(user.router)
+app.include_router(interview_history.router)
 
 
 @app.on_event("startup")
